@@ -1,0 +1,14 @@
+h3 {{pageTitle}}
+
+table.table.table-striped
+  thead
+    td First Name
+  tbody
+    tr(ng-repeat="item in items")
+      td {{item.name}}
+      td
+        a(href="/items/{{item._id}}") Show
+        span &nbsp | &nbsp
+        a(href="/items/{{item._id}}/edit") Edit
+
+button.btn.btn-success(ng-click="new()") New item

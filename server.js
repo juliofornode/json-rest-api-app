@@ -22,9 +22,10 @@ var port = app.get('port');
 
 
 //5. Middleware definition (app.use)
-app.use(express.static('/public'));
+app.use(express.static(__dirname + '/public'));
 app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 
 //6. Routes

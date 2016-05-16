@@ -1,0 +1,14 @@
+h3 Item Details
+
+form.form-horizontal(name="form", ng-submit="submit()", novalidate)
+  .control-group(ng-class="errorClass('name')")
+    label.control-label(for="name") Name
+    .controls
+      input(ng-model="item.name", type="text", name="name", placeholder="Name", required, autofocus)
+
+  .control-group
+    .controls
+      a.btn(ng-click="cancel()") Cancel
+      button.btn.btn-success(type="submit") Save
+
+a(href="/items/{{item.id}}") Back

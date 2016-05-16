@@ -1,8 +1,27 @@
 doctype html
-html(lang="en")
+html(ng-app="myApp")
   head
+    base(href='/')
     title=pageTitle
-  body
-    h1=pageTitle
+    link(rel='stylesheet', href='/css/bootstrap.css')
+    link(rel='stylesheet', href='/css/app.css')
 
-    block content
+  body(ng-controller='MainCtrl')
+    div.container
+      h3 {{pageTitle}}
+
+      ng-view
+
+  script(src='js/lib/angular/angular.js')
+  script(src='js/lib/angular/angular-resource.js')
+
+  script(src='js/app.js')
+  script(src='js/services.js')
+
+  script(src='js/controllers/ItemsEditCtrl.js')
+  script(src='js/controllers/ItemsIndexCtrl.js')
+  script(src='js/controllers/ItemsShowCtrl.js')
+  script(src='js/controllers/MainCtrl.js')
+
+  script(src='js/filters.js')
+  script(src='js/directives.js')
